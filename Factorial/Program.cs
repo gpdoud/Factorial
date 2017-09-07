@@ -13,13 +13,29 @@ namespace Factorial {
 			}
 			return factorial;
 		}
+		bool IsDivisibleByThree(int nbr) {
+			var a = 1;
+			var b = 0 ;
+			var c = a / b;
+			return (nbr % 3 == 0);
+		}
 		void Run() {
-			for (var nbr = 2; nbr <= 10; nbr++) {
-				Console.WriteLine($"The factorial of {nbr} is {Factorial(nbr)}");
+			//for (var nbr = 2; nbr <= 10; nbr++) {
+			//	Console.WriteLine($"The factorial of {nbr} is {Factorial(nbr)}");
+			//}
+			for(var idx = 0; idx <= 100; idx++ ) {
+				if (IsDivisibleByThree(idx)) {
+					Console.WriteLine($"{idx} is divisible by 3");
+				}
 			}
 		}
 		static void Main(string[] args) {
-			new Program().Run();
+			try {
+				new Program().Run();
+			} catch (DivideByZeroException ex) {
+				Console.WriteLine("Caught exception in Main()");
+				return;
+			}
 		}
 	}
 }
