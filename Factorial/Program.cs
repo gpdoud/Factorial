@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Factorial {
 	class Program {
-		int Factorial(int nbr) {
+		int Factorial(int nbr) { 
 			var factorial = 1;
 			for(var idx = 2; idx <= nbr; idx++) {
 				factorial *= idx;
